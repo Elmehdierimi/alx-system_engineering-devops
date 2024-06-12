@@ -1,3 +1,2 @@
 #!/bin/bash
-rsync -av --ignore-existing --update --include='*.html' --exclude='*' ./ ../
-
+find . -maxdepth 1 -name "*.html" -exec rsync -av --ignore-existing --update {} ../ \;
